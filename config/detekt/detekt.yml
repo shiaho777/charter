@@ -1,0 +1,45 @@
+# Charter detekt configuration.
+# buildUponDefaultConfig is enabled — only project-specific overrides live here.
+# Custom Charter rules ship in tools/detekt-rules and are activated below.
+# The `charter:` block is what AGENTS.md [machine] rules point at;
+# verifyAgentContract cross-checks that every claimed rule id stays active.
+
+charter:
+  active: true
+  MotionSpecInline:
+    active: true
+  NoGlobalScope:
+    active: true
+
+complexity:
+  LongMethod:
+    threshold: 80
+  LongParameterList:
+    functionThreshold: 8
+
+style:
+  ReturnCount:
+    # Parsers and auditors legitimately branch per input shape.
+    excludes: [ "**/tools/**" ]
+  MagicNumber:
+    ignorePropertyDeclaration: true
+    ignoreLocalVariableDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreConstantDeclaration: true
+    excludes: [ "**/test/**", "**/androidTest/**", "**/*.kts", "**/tools/**" ]
+  MaxLineLength:
+    excludes: [ "**/tools/**", "**/test/**" ]
+
+formatting:
+  # Formatting is spotless/ktlint's job; detekt owns semantics only.
+  active: false
+  ForbiddenComment:
+    active: false
+  UnusedImports:
+    active: true
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated: [ "Composable" ]
+  TopLevelPropertyNaming:
+    constantPattern: "[A-Z][_A-Za-z0-9]*"

@@ -1,0 +1,20 @@
+# Renovate configuration for Charter
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "enabledManagers": ["gradle"],
+  "schedule": ["before 6am on Monday"],
+  "prConcurrentLimit": 3,
+  "packageRules": [
+    {
+      "description": "Compose BOM and material3 must move together (material3 alpha tracks a newer ui line)",
+      "matchPackageNames": ["androidx.compose:compose-bom", "androidx.compose.material3:material3"],
+      "groupName": "compose-bom-and-material3"
+    },
+    {
+      "description": "Pin material3 alphas exactly; never widen to a range",
+      "matchPackageNames": ["androidx.compose.material3:material3"],
+      "allowedVersions": "!/^$/"
+    }
+  ]
+}
