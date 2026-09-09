@@ -20,6 +20,7 @@ private val charterModules =
         "core/data",
         "core/testing",
         "feature/repos",
+        "feature/anime",
     )
 
 fun charterFiles(): List<KoFileDeclaration> =

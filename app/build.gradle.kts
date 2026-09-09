@@ -23,7 +23,7 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:common"))
     implementation(project(":core:data"))
-    implementation(project(":feature:repos"))
+    implementation(project(":feature:anime"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
@@ -31,6 +31,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.navigation3)
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
+    implementation(libs.compose.material.icons.extended)
     implementation(libs.timber)
 
     testImplementation(project(":core:testing"))

@@ -6,8 +6,11 @@ every time.
 
 Charter is three things wearing one trench coat:
 
-1. **A reference app** (`:app` + `:feature:repos`) showing how to build a
-   Compose application the Charter way.
+1. **A reference app** (`:app` + `:feature:anime`) — a four-tab anime browser
+   whose product prototype is borrowed from Kazumi (design only, no code; see
+   `docs/adr/0008-kazumi-prototype.md`) — showing how to build a Compose
+   application the Charter way. `:feature:repos` remains as the minimal
+   single-feature exemplar.
 2. **A design system** (`:core:designsystem` + `:catalog`) — Material 3
    Expressive on top of explicit tokens.
 3. **A toolchain** (`:tools/*`) that makes the rules in this file real:
@@ -83,7 +86,7 @@ If you add a rule, tag it. If you can automate it, automate it and tag it
 
 | Path | What lives there |
 |---|---|
-| `app/` | The reference application shell |
+| `app/` | The reference application shell (adaptive tab chrome + Nav3 host) |
 | `catalog/` | Interactive design-system showcase + screenshot/audit tests |
 | `core/designsystem` | Tokens, theme, motion, components — the only visual source of truth |
 | `core/common` | Result/AppError, dispatcher qualifiers (pure JVM) |
@@ -92,7 +95,8 @@ If you add a rule, tag it. If you can automate it, automate it and tag it
 | `core/database` | Room entities, DAOs |
 | `core/data` | Repositories, mappers, DI bindings |
 | `core/testing` | Test rules and fakes shared by all modules |
-| `feature/repos` | The reference feature (GitHub repo browser) |
+| `feature/anime` | The reference app's main feature (anime browser; prototype borrowed from Kazumi, ADR 0008) |
+| `feature/repos` | The minimal feature exemplar (GitHub repo browser) |
 | `architecture-tests/` | Konsist tests for module boundaries and hygiene |
 | `build-logic/` | Convention plugins — where build standards live |
 | `tools/` | agent-contract, design-review, detekt-rules |

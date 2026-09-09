@@ -5,8 +5,11 @@ toolchain that makes engineering standards enforceable.**
 
 Charter is three things wearing one trench coat:
 
-1. **A reference app** (`:app` + `:feature:repos`) showing how to build a
-   Compose application the Charter way.
+1. **A reference app** (`:app` + `:feature:anime`) — a four-tab anime browser
+   (popular/timetable/collection/me, plus search, detail with a multi-source
+   sheet, history, and a placeholder player) showing how to build a Compose
+   application the Charter way. `:feature:repos` remains as the minimal
+   single-feature exemplar.
 2. **A design system** (`:core:designsystem` + `:catalog`) — Material 3
    Expressive on top of explicit tokens.
 3. **A toolchain** (`tools/*`) that makes the rules real:
@@ -53,7 +56,8 @@ architecture tests → Roborazzi screenshot regression → `designAudit` →
 | `core/database` | Room entities, DAOs |
 | `core/data` | Repositories, mappers, DI bindings |
 | `core/testing` | Test rules and fakes shared by all modules |
-| `feature/repos` | The reference feature (GitHub repo browser) |
+| `feature/anime` | The reference app's main feature (anime browser, prototype borrowed from Kazumi — see ADR 0008) |
+| `feature/repos` | The minimal feature exemplar (GitHub repo browser) |
 | `architecture-tests/` | Konsist tests for module boundaries and hygiene |
 | `build-logic/` | Convention plugins |
 | `tools/` | agent-contract, design-review, detekt-rules |
@@ -79,6 +83,19 @@ architecture tests → Roborazzi screenshot regression → `designAudit` →
 See [AGENTS.md](AGENTS.md). Every rule there is either machine-enforced (the
 enforcing check is named in-line) or carries a written rationale so an agent —
 or a human — can apply it to cases the author never imagined.
+
+## Acknowledgements
+
+- The reference app's **product prototype is borrowed from
+  [Kazumi](https://github.com/Predidit/Kazumi) (Predidit/Kazumi, GPL-3.0)**:
+  its screen structure, navigation shape, and interaction patterns (four-tab
+  shell, weekday timetable, multi-source sheet, five-state collection,
+  row-scoped watch history). Charter is Apache-2.0 and GPL-3.0 code cannot be
+  part of it, so **no Kazumi source code or assets are copied** — every screen
+  is re-implemented in Compose on Charter's design system. Playback sources in
+  this app are local demos; nothing is scraped and no real video is played.
+  See [ADR 0008](docs/adr/0008-kazumi-prototype.md).
+- Anime metadata comes from the [Bangumi open API](https://api.bgm.tv).
 
 ## License
 

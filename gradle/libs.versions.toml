@@ -26,6 +26,7 @@ profileinstaller = "1.4.1"
 # Network & serialization
 retrofit = "3.0.0"
 okhttp = "5.4.0"
+coil = "3.2.0"
 kotlinxSerialization = "1.8.0"
 kotlinxCoroutines = "1.11.0"
 kotlinxCollectionsImmutable = "0.3.8"
@@ -98,6 +99,10 @@ retrofit-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-ko
 okhttp-core = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
+
+# Image loading (Coil 3: compose UI + OkHttp network fetcher, auto-registered)
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
 
 # Logging
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
