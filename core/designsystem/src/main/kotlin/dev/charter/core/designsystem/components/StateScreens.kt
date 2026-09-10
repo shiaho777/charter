@@ -61,11 +61,12 @@ fun ErrorState(
     message: String,
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
+    title: String = "Something went wrong",
     retryLabel: String = "Retry",
 ) {
     StateScreen(
         badge = { StateBadge(icon = StateBadges.Error) },
-        title = "Something went wrong",
+        title = title,
         message = message,
         modifier = modifier,
         actionLabel = retryLabel,

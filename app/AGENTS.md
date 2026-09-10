@@ -1,6 +1,9 @@
 # app — 模块契约
 
 职责：参考应用壳。组装 feature 模块、承载 Application 类与导航宿主，自身不含业务逻辑。
+当前形态：`:feature:anime` 的四 Tab 自适应外壳——compact 宽度用 `ShortNavigationBar`，
+更宽用 `NavigationRail`（复用表指定，不手写底部导航）；Tab 共享单一 back stack，
+详情/搜索/播放全屏压栈。
 
 ## 依赖边界
 
